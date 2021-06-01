@@ -20,13 +20,11 @@ def neighbors(field,x,y):
                 (x+1,y-1),(x+1,y),(x+1,y+1)]
     count = 0
     for i,j in neighbor:
-        if i >= 0 and j >= 0:
-            try:
-                if field[i,j] != 1:
-                    count += 0
-                count += field[i,j]
-            except:
-                pass
+        try:
+            if field[i,j] == 1:
+                count += 1
+        except:
+            pass
     return count
 
 def rules(x,y,count):
@@ -71,4 +69,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
